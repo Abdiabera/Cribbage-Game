@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+    max-width: 120ex;
+    margin: auto;
+    background-color: gray;
+    background-image: url("https://itsshowtimenj.files.wordpress.com/2013/10/abstractdesktop-astounding-wood-background-wallpaper-backgrounds.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+
+h1, h2, h3 {
+  font-family: sans-serif;
+}
+
+.main_area {
+    background-color: white;
+    padding: 4ex;
+
+
+    margin: 1ex;
+    height: 100%;
+}
+
+/* ============================================================ */

@@ -1,0 +1,107 @@
+
+.crib-cards {
+    width: 148px; 
+    height: 200px; 
+    border: 1px solid #303030;
+    color: rgb(255, 255, 255);
+    overflow: hidden; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.crib-cards img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.deck {
+    order: -1;
+    width: 182px;
+    height: 209px;   
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deck img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.players {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    color: white;
+}
+
+.player1_cards,
+.player2_cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.player-card {
+    width: 135px;
+    height: 200px;
+    margin-right: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    background-size: contain;
+}
+
+.crib-cards .player-card.in-crib {
+    display: none;
+}
+
+.play-area {
+    flex: 1;
+    background-color: transparent;
+    margin: 0 20px;
+    width: 1000px;
+    height: 210px;
+    margin-right: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    color: white;
+}
+
+.play-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.play-cards .card {
+    margin-right: 10px;
+    width: 100px;
+    height: 150px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.deck-playarea-container {
+    max-width: 1400px;
+    margin: 25px auto;
+    display: flex;
+    align-items: flex-start;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
