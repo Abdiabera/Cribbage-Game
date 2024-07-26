@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link href="game.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="background-image: url('https://itsshowtimenj.files.wordpress.com/2013/10/abstractdesktop-astounding-wood-background-wallpaper-backgrounds.jpg'); background-size: cover; font-family:'Arial', sans-serif;">
+    <div>
+        <button onclick="startNewGame()">Start New Game</button>
+    </div>
+    <div class="players" style= "max-width: 1400px; margin: 10px auto; background-color: transparent; padding: 10px; border-radius:10px; box-shadow: 0 0 10px rgba(0, 0 0, 0.5);">
+        <div style="font-size: 24px; font-weight: bold; margin-bottom: 10px;"> <span id="player1Name">Player 1:</span> </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <!-- this is used to add player-card 1 to each player card -->
+            <div class="player1_cards"></div>
+        </div>
+        <div>
+            <!-- Player 1 Points -->
+            <h2 class="player1_points"></h2>
+        </div>
+    </div>
+    <div class = "deck-playarea-container" style="display: flex;">
+        <div class="deck" style="color: white;">Deck
+            <h2 class="player-card">
+                <img src="images/back.png">
+            </h2>
+        </div>
+
+        <div class="play-area" style=" margin-left: 300px ;background-color: transparent;">
+            <h2></h2>
+            <div class="play-cards"></div>
+        </div>
+    </div>
+    <div class="players" style= "max-width: 1400px; margin: 10px auto; background-color: transparent; padding: 10px; border-radius:10px; box-shadow: 0 0 10px rgba(0, 0 0, 0.5);">
+        <div style="font-size: 24px; font-weight: bold; margin-bottom: 10px;"> Player 2: </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <!-- this is used to add player-card 2 to each player card -->
+            <div class="player2_cards"></div>
+        </div>
+        <div>
+            <h2 class="player2_points">Player 2 Points:&nbsp;<span class="badge">1</span></h2>
+        </div>
+    </div>
+
+    <div class="crib-cards">
+        <div class="player-card">
+            <img src="images/back.png">
+        </div>
+    </div>
+    <script>
+        // Retrieve saved player name from localStorage
+        var playerName = localStorage.getItem('playerName');
+
+        // Update Player 1 name and points if playerName exists
+        if (playerName) {
+            document.getElementById('player1Name').textContent = playerName + "'s Hand:";
+            var player1Points = document.querySelector('.player1_points');
+            player1Points.textContent = playerName + "'s Points: " + "\u00A0"; // Display player name and points
+            var pointsBadge = document.createElement('span');
+            pointsBadge.classList.add('badge');
+            pointsBadge.textContent = '1'; // Replace '1' with the actual points
+            player1Points.appendChild(pointsBadge); // Append points to the element
+        }
+    </script>
+    <script src="game.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Cribbage!</title>
+    <meta charset="utf-8" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div style="background-image: url('https://itsshowtimenj.files.wordpress.com/2013/10/abstractdesktop-astounding-wood-background-wallpaper-backgrounds.jpg');">
+    </div>
+    <div class="main_area">
+        <h1>Welcome To Cribbage!</h1>
+        <div class="start_game_container">
+            <form onsubmit="return openGamePage()" action="game.html">
+                <div class="form_inputs">
+                    <div>
+                        <label for="start_game_name">Your name: </label>
+                        <input type="text" name="name" id="start_game_name" required />
+                        <p id="error-message" style="color: red; display: none;">Please enter a name.</p>
+                    </div>
+                    <div>
+                        <label for="start_game_game">Game: </label>
+                        <select name="game" id="start_game_game">
+                            <option value="Cribbage">Cribbage</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <button onclick="startNewGame()" type="submit">Start Game</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openGamePage() {
+            var playerName = document.getElementById('start_game_name').value;
+            if (!playerName.trim()) {
+                document.getElementById('error-message').style.display = 'block';
+                return false; // Prevent form submission if name is not provided
+            } else {
+                localStorage.setItem('playerName', playerName); // Save name to localStorage
+                return true; // Allow form submission
+            }
+        }
+    </script>
+</body>
+</html>
